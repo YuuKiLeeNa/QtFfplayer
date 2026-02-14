@@ -33,6 +33,8 @@ extern "C"
 #include<QGridLayout>
 #include<memory>
 
+#include "QtGLVideoWidget.h"
+
 struct AVFrame;
 class QLabel;
 class QButtonGroup;
@@ -44,7 +46,7 @@ class QtClockAction;
 class QLineEdit;
 class QHBoxLayout;
 
-class QtFfplayer :public QOpenGLWidget ,protected QOpenGLFunctions
+class QtFfplayer :public QtGLVideoWidget
 {
 	Q_OBJECT
 public:
@@ -134,19 +136,14 @@ public slots:
 
 protected:
 	void initUI(QWidget*parentWidget);
-	QRect calculate_display_rect(ffplay::Frame*f);
+	QRect calculate_display_rect(/*ffplay::Frame*f*/AVFrame*f);
 	QRect calculate_display_rect(
 		int scr_xleft, int scr_ytop, int scr_width, int scr_height,
 		int pic_width, int pic_height, AVRational pic_sar);
-	void deleteTex();
+	//void deleteTex();
 	void initConnect();
 	struct SwsContext* m_SwsContext = nullptr;
-	QVector<QVector3D> vertices;
-	QVector<QVector2D> texCoords;
-	QOpenGLShaderProgram program;
-	QOpenGLTexture* texture = nullptr;
-	QMatrix4x4 projection;
-	const AVPixelFormat m_pixNeeded = AV_PIX_FMT_YUV420P;
+	AVPixelFormat m_pixNeeded = AV_PIX_FMT_YUV420P;
 
 protected:
 	//void thdFunVideo();
@@ -189,7 +186,7 @@ protected:
 	
 	std::pair<QString,int> m_strSaveFile;
 	ffplay m_play;
-	ffplay::Frame m_frameSave;
+	/*ffplay::Frame m_frameSave;
 	AVFrame* m_frame_tmp;
 	decltype(m_frameSave) m_frameCopy;
 
@@ -201,7 +198,7 @@ protected:
 	int m_iPreFrameHeight = 0;
 	int m_iPreFrameWinWidth = 0;
 	int m_iPreFrameWinHeight = 0;
-	AVRational m_preFrameRatio;
+	AVRational m_preFrameRatio;*/
 	int64_t m_i64VideoLength;
 
 	std::mutex m_mutex;
@@ -220,38 +217,40 @@ protected:
 	//QSize minimumSizeHint() const override;
 	//QSize sizeHint() const override;
 
-	void setFrameSize(int width,  int height);
+	//void setFrameSize(int width,  int height);
 
-	void setYPixels(uint8_t* pixels, int stride);
-	void setUPixels(uint8_t* pixels, int stride);
-	void setVPixels(uint8_t* pixels, int stride);
+	//void setYPixels(uint8_t* pixels, int stride);
+	//void setUPixels(uint8_t* pixels, int stride);
+	//void setVPixels(uint8_t* pixels, int stride);
 
 protected:
-	void initializeGL() override;
+	//void initializeGL() override;
 	void paintGL() override;
 	void resizeGL(int width, int height) override;
 	//QRect m_drawRect;
 private:
-	enum YUVTextureType {
+	/*enum YUVTextureType {
 		YTexture,
 		UTexture,
 		VTexture
-	};
+	};*/
 
-	void initializeTextures();
+	/*void initializeTextures();
 	void bindPixelTexture(GLuint texture, YUVTextureType textureType, uint8_t* pixels, int stride);
 
 	QOpenGLShaderProgram m_program;
-	QOpenGLVertexArrayObject m_vao;
+	QOpenGLVertexArrayObject m_vao;*/
 
 	std::atomic_int m_frameWidth = 1920;
 	std::atomic_int m_frameHeight = 1080;
+	/*AVColorSpace m_srcColorSpace = AVCOL_SPC_UNSPECIFIED;
+	AVColorRange m_srcColorRange = AVCOL_RANGE_UNSPECIFIED;*/
 
-	GLuint y_tex{ 0 };
-	GLuint u_tex{ 0 };
-	GLuint v_tex{ 0 };
-	GLint u_pos{ 0 };
-	std::atomic_bool m_isOpenGLInit = false;
+	//GLuint y_tex{ 0 };
+	//GLuint u_tex{ 0 };
+	//GLuint v_tex{ 0 };
+	//GLint u_pos{ 0 };
+	//std::atomic_bool m_isOpenGLInit = false;
 protected:
 
 	std::function<QString(const QString&, const QString&, const QString&, const QString&)> makeStyleSheet = [](const QString&s1, const QString&s2, const QString&s3, const QString&s4)->QString

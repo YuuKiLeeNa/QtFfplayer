@@ -1,8 +1,4 @@
 <RCC>
-    <qresource prefix="/shaders">
-        <file>shaders/yuv_core.frag</file>
-        <file>shaders/yuv_core.vert</file>
-    </qresource>
     <qresource prefix="/icon">
         <file>res/ahead.png</file>
         <file>res/aheadHover.png</file>

@@ -17,6 +17,12 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="ffmpeg">
+      <UniqueIdentifier>{cf58beba-7d80-4ef7-ad49-b5207655b551}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="glm">
+      <UniqueIdentifier>{a3a01f25-266f-4220-a198-875875769607}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="QtFfplayer.qrc">
@@ -66,6 +72,9 @@
     <ClCompile Include="CSelCodec.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\glm\core\dummy.cpp">
+      <Filter>glm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ffplay.h">
@@ -92,6 +101,792 @@
     <ClInclude Include="define_type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\ac3_parser.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\adts_parser.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\avcodec.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\avdct.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\bsf.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\codec.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\codec_desc.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\codec_id.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\codec_par.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\d3d11va.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\defs.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\dirac.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\dv_profile.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\dxva2.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\jni.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\mediacodec.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\packet.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\qsv.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\smpte_436m.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\vdpau.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\version.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\version_major.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\videotoolbox.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavcodec\vorbis_parser.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavdevice\avdevice.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavdevice\version.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavdevice\version_major.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavfilter\avfilter.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavfilter\buffersink.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavfilter\buffersrc.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavfilter\version.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavfilter\version_major.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavformat\avformat.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavformat\avio.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavformat\version.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavformat\version_major.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\adler32.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\aes.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\aes_ctr.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\ambient_viewing_environment.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\attributes.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\audio_fifo.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\avassert.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\avconfig.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\avstring.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\avutil.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\base64.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\blowfish.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\bprint.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\bswap.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\buffer.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\camellia.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\cast5.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\channel_layout.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\common.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\container_fifo.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\cpu.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\crc.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\csp.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\des.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\detection_bbox.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\dict.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\display.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\dovi_meta.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\downmix_info.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\encryption_info.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\error.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\eval.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\executor.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\ffversion.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\fifo.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\file.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\film_grain_params.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\frame.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hash.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hdr_dynamic_metadata.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hdr_dynamic_vivid_metadata.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hmac.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_amf.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_cuda.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_d3d11va.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_d3d12va.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_drm.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_dxva2.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_mediacodec.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_oh.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_opencl.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_qsv.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_vaapi.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_vdpau.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_videotoolbox.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\hwcontext_vulkan.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\iamf.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\imgutils.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\intfloat.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\intreadwrite.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\lfg.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\log.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\lzo.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\macros.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\mastering_display_metadata.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\mathematics.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\md5.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\mem.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\motion_vector.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\murmur3.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\opt.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\parseutils.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\pixdesc.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\pixelutils.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\pixfmt.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\random_seed.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\rational.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\rc4.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\refstruct.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\replaygain.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\ripemd.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\samplefmt.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\sha.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\sha512.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\spherical.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\stereo3d.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\tdrdi.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\tea.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\threadmessage.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\time.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\timecode.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\timestamp.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\tree.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\twofish.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\tx.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\uuid.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\version.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\video_enc_params.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\video_hint.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libavutil\xtea.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libswresample\swresample.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libswresample\version.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libswresample\version_major.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libswscale\swscale.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libswscale\version.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ffmpeg-8.0.1-full_build-shared\include\libswscale\version_major.h">
+      <Filter>ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="HDRMetadataParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\func_common.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\func_exponential.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\func_geometric.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\func_integer.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\func_matrix.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\func_noise.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\func_packing.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\func_trigonometric.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\func_vector_relational.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\hint.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\intrinsic_common.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\intrinsic_exponential.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\intrinsic_geometric.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\intrinsic_matrix.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\intrinsic_trigonometric.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\intrinsic_vector_relational.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\setup.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_float.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_gentype.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_half.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_int.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_mat.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_mat2x2.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_mat2x3.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_mat2x4.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_mat3x2.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_mat3x3.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_mat3x4.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_mat4x2.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_mat4x3.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_mat4x4.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_size.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_vec.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_vec1.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_vec2.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_vec3.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\type_vec4.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\_detail.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\_fixes.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\_swizzle.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\_swizzle_func.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\core\_vectorize.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\ext.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\glm.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\half_float.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\matrix_access.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\matrix_integer.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\matrix_inverse.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\matrix_transform.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\noise.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\quaternion.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\random.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\swizzle.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\type_precision.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtc\type_ptr.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\associated_min_max.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\bit.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\closest_point.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\color_cast.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\color_space.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\color_space_YCoCg.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\compatibility.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\component_wise.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\constants.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\epsilon.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\euler_angles.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\extend.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\extented_min_max.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\fast_exponential.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\fast_square_root.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\fast_trigonometry.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\gradient_paint.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\handed_coordinate_space.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\inertia.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\integer.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\intersect.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\int_10_10_10_2.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\log_base.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\matrix_cross_product.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\matrix_interpolation.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\matrix_major_storage.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\matrix_operation.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\matrix_query.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\mixed_product.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\multiple.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\noise.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\norm.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\normal.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\normalize_dot.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\number_precision.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\ocl_type.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\optimum_pow.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\orthonormalize.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\perpendicular.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\polar_coordinates.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\projection.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\quaternion.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\random.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\raw_data.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\reciprocal.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\rotate_vector.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\simd_mat4.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\simd_vec4.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\spline.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\std_based_type.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\string_cast.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\transform.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\transform2.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\ulp.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\unsigned_int.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\vec1.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\vector_access.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\vector_angle.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\vector_query.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\verbose_operator.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\gtx\wrap.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\glm\virtrev\xstream.hpp">
+      <Filter>glm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QCustomSlider.h">
@@ -112,5 +907,316 @@
     <QtMoc Include="QtPlayList.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\glm\core\func_common.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\func_exponential.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\func_geometric.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\func_integer.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\func_matrix.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\func_noise.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\func_packing.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\func_trigonometric.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\func_vector_relational.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\intrinsic_common.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\intrinsic_exponential.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\intrinsic_geometric.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\intrinsic_matrix.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\intrinsic_trigonometric.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\intrinsic_vector_relational.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_gentype.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_half.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_mat.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_mat2x2.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_mat2x3.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_mat2x4.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_mat3x2.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_mat3x3.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_mat3x4.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_mat4x2.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_mat4x3.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_mat4x4.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_vec.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_vec1.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_vec2.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_vec3.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\core\type_vec4.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtc\half_float.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtc\matrix_access.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtc\matrix_inverse.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtc\matrix_transform.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtc\noise.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtc\quaternion.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtc\random.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtc\swizzle.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtc\type_precision.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtc\type_ptr.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\associated_min_max.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\bit.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\closest_point.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\color_cast.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\color_space.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\color_space_YCoCg.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\compatibility.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\component_wise.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\constants.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\epsilon.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\euler_angles.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\extend.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\extented_min_max.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\fast_exponential.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\fast_square_root.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\fast_trigonometry.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\gradient_paint.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\handed_coordinate_space.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\inertia.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\integer.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\intersect.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\int_10_10_10_2.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\log_base.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\matrix_cross_product.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\matrix_interpolation.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\matrix_major_storage.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\matrix_operation.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\matrix_query.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\mixed_product.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\multiple.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\noise.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\norm.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\normal.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\normalize_dot.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\number_precision.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\ocl_type.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\optimum_pow.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\orthonormalize.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\perpendicular.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\polar_coordinates.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\projection.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\quaternion.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\random.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\raw_data.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\reciprocal.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\rotate_vector.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\simd_mat4.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\simd_vec4.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\spline.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\std_based_type.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\string_cast.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\transform.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\transform2.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\ulp.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\unsigned_int.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\vec1.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\vector_access.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\vector_angle.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\vector_query.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\verbose_operator.inl">
+      <Filter>glm</Filter>
+    </None>
+    <None Include="..\glm\gtx\wrap.inl">
+      <Filter>glm</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -198,7 +198,7 @@ protected:
 	int m_iPreFrameHeight = 0;
 	int m_iPreFrameWinWidth = 0;
 	int m_iPreFrameWinHeight = 0;
-	AVRational m_preFrameRatio;*/
+	AVRational m_pRenderreFrameRatio;*/
 	int64_t m_i64VideoLength;
 
 	std::mutex m_mutex;
@@ -207,7 +207,7 @@ protected:
 	//int m_castFrameW = 0;
 	//int m_caseFrameH = 0;
 	AVPixelFormat m_frameFormat = AV_PIX_FMT_NONE;
-	std::unique_ptr<std::thread, std::function<void(std::thread*&)>> m_thread;
+	std::unique_ptr<std::thread, std::function<void(std::thread*)>> m_thread;
 	char m_szCmdLine[2][512];
 	char* m_pp[2];
 

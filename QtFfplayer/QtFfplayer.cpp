@@ -28,7 +28,9 @@ extern "C"{
 #include"QtClockAction.h"
 #include<QLineEdit>
 #include"CConfig.h"
-#include<Windows.h>
+#ifdef Q_OS_WIN
+#include <windows.h>  // Windows API 所需
+#endif
 #include "define_type.h"
 
 #ifdef DELAY_ANALYSIS
@@ -67,18 +69,6 @@ QtFfplayer::~QtFfplayer()
 	QObject::disconnect(this, SIGNAL(signalsVideoBegin()), this, SLOT(slotVideoBegin()));
 	QObject::disconnect(this, SIGNAL(signalsVideoEnd()), this, SLOT(slotVideoEnd()));
 	stop();
-	/*deleteTex();
-	if (m_frameSave.frame) 
-	{
-		av_frame_unref(m_frameSave.frame);
-		av_frame_free(&m_frameSave.frame);
-	}
-	if (m_frame_tmp)
-	{
-		av_frame_unref(m_frame_tmp);
-		av_frame_free(&m_frame_tmp);
-	}*/
-
 }
 
 void QtFfplayer::Render(ffplay::Frame* f1)
@@ -190,23 +180,8 @@ void QtFfplayer::Render(ffplay::Frame* f1)
 		//f->color_range = m_srcColorRange;
 		rel_f.reset(f.release());
 	}
-
-	//else if (m_frameWidth != rel_f->width || m_frameHeight != rel_f->height)
-	//	setFrameSize(rel_f->width, rel_f->height);
-
 	QtGLVideoWidget::renderFrame(rel_f.release());
-	/*{
-		std::lock_guard<std::mutex>lock(m_mutex);
-		if (m_frameSave.frame) 
-		{
-			av_frame_unref(m_frameSave.frame);
-			av_frame_free(&m_frameSave.frame);
-		}
-		memcpy(&m_frameSave, f1, sizeof(ffplay::Frame));
-		m_frameSave.frame = rel_f.release();
-		m_bUploadTex = true;
-	}
-	update();*/
+
 }
 
 AVPixelFormat QtFfplayer::getNeededPixeFormat()
@@ -273,17 +248,15 @@ void QtFfplayer::start(const std::pair<QString, int>& pathFile)
 	m_pp[0] = m_szCmdLine[0];
 	m_pp[1] = m_szCmdLine[1];
 	setBtnPlayingState(true);
-	//QObject::connect(this, SIGNAL(signalsGetFrame()), this, SLOT(slotGetFrame()));// , Qt::BlockingQueuedConnection);
 	QObject::connect(this, SIGNAL(signalsVideoBegin()), this, SLOT(slotVideoBegin()));
 	QObject::connect(this, SIGNAL(signalsVideoEnd()), this, SLOT(slotVideoEnd()));
-	//QObject::connect(this, SIGNAL(signalsGetFrame()), this, SLOT(slotGetFrame()));//, Qt::ConnectionType::BlockingQueuedConnection);
 	
 	m_thread.reset();
 	{
 		std::unique_lock<std::mutex>lock(m_play.m_mutexProtectedRunStart);
 		m_play.m_bIsRunStart = true;
 	}
-	m_thread = std::unique_ptr<std::thread, std::function<void(std::thread*&)>>(new std::thread(&ffplay::start, &m_play, 2, m_pp), [this](std::thread*& t)
+	m_thread = std::unique_ptr<std::thread, std::function<void(std::thread*)>>(new std::thread(&ffplay::start, &m_play, 2, m_pp), [this](std::thread* t)
 		{
 			std::unique_lock<std::mutex>lock1(m_play.m_mutexProtectedRunStart);
 			m_play.m_cond.wait(lock1, [this]()
@@ -311,8 +284,6 @@ void QtFfplayer::stop()
 {
 	QObject::disconnect(this, SIGNAL(signalsVideoBegin()), this, SLOT(slotVideoBegin()));
 	QObject::disconnect(this, SIGNAL(signalsVideoEnd()), this, SLOT(slotVideoEnd()));
-	//QObject::disconnect(this, SIGNAL(signalsGetFrame()), nullptr, nullptr);
-
 
 	setBtnPlayingState(false);
 	if (m_thread)
@@ -320,18 +291,8 @@ void QtFfplayer::stop()
 		m_thread.reset();
 		assert(!m_thread);
 	}
+	QtGLVideoWidget::renderFrame(NULL);
 
-	{
-		QtGLVideoWidget::renderFrame(NULL);
-		/*std::lock_guard<std::mutex>lock(m_mutex);
-		if (m_frameSave.frame)
-		{
-			av_frame_unref(m_frameSave.frame);
-			av_frame_free(&m_frameSave.frame);
-		}
-		m_bUploadTex = true;*/
-	}
-	update();
 }
 
 QtPlayList::PLAY_MODE QtFfplayer::getPlayMode()
@@ -1510,41 +1471,13 @@ void QtFfplayer::setMenuTransparent(QMenu* menu)
 {
 	menu->setWindowFlags(menu->windowFlags() | Qt::FramelessWindowHint);
 	menu->setAttribute(Qt::WA_TranslucentBackground);
+	#ifdef Q_OS_WIN
 	HWND hwnd = reinterpret_cast<HWND>(menu->winId());
 	DWORD class_style = ::GetClassLong(hwnd, GCL_STYLE);
 	class_style &= ~CS_DROPSHADOW;
 	::SetClassLong(hwnd, GCL_STYLE, class_style);
+	#endif
 }
-
-
-//void QtFfplayer::setFrameSize( int width,  int height)
-//{
-//	m_frameWidth = width;
-//	m_frameHeight = height;
-//	m_isOpenGLInit = false;
-//
-//}
-
-//void QtFfplayer::initializeGL()
-//{
-//	initializeOpenGLFunctions();
-//	m_program.removeAllShaders();
-//	m_program.destroyed();
-//	if (!m_program.create())
-//	{
-//		qDebug() << "m_program.create() failed";
-//	}
-//	glDisable(GL_DEPTH_TEST);
-//
-//	m_program.addShaderFromSourceFile(QOpenGLShader::Vertex, ":shaders/shaders/yuv_core.vert");
-//	m_program.addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaders/shaders/yuv_core.frag");
-//
-//	m_program.link();
-//
-//	u_pos = m_program.uniformLocation("draw_pos");
-//	m_vao.destroy();
-//	m_vao.create();
-//}
 
 void QtFfplayer::paintGL()
 {
@@ -1755,137 +1688,11 @@ void QtFfplayer::paintGL()
 	m_vao.release();
 }
 
-
-//void QtFfplayer::paintGL()
-//{
-//	if (!m_frameSave.frame)
-//	{
-//		glClearColor(0, 0, 0, 0);
-//		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//		return;
-//	}
-//	bool bUploadTex;
-//	
-//	{
-//		std::lock_guard<std::mutex>lock(m_mutex);
-//		if (bUploadTex = m_bUploadTex)
-//		{
-//			memcpy(&m_frameCopy, &m_frameSave, sizeof(m_frameCopy));
-//			av_frame_unref(m_frame_tmp);
-//			if (m_frameSave.frame)
-//				av_frame_ref(m_frame_tmp, m_frameSave.frame);
-//			m_frameCopy.frame = m_frame_tmp;
-//		}
-//	}
-//
-//	if (!m_isOpenGLInit)
-//	{
-//			
-//			initializeTextures();
-//			m_isOpenGLInit = true;
-//			
-//	}
-//	
-//	glClearColor(0, 0, 0, 0);
-//	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//
-//	QRect rect = calculate_display_rect(&m_frameSave);
-//	
-//	m_program.bind();
-//	m_vao.bind();
-//	m_program.setUniformValue("y_tex", 0);
-//	m_program.setUniformValue("u_tex", 1);
-//	m_program.setUniformValue("v_tex", 2);
-//	
-//
-//	QMatrix4x4 m;
-//	m.ortho(0, width(), height(), 0.0, 0.0, 100.0f);
-//	m_program.setUniformValue("u_pm", m);
-//	glUniform4f(u_pos, rect.left(), rect.top(), rect.width(), rect.height());
-//	glActiveTexture(GL_TEXTURE0);
-//	glBindTexture(GL_TEXTURE_2D, y_tex);
-//	if(bUploadTex)
-//		setYPixels(m_frameCopy.frame->data[0], m_frameCopy.frame->linesize[0]);
-//	glActiveTexture(GL_TEXTURE1);
-//	glBindTexture(GL_TEXTURE_2D, u_tex);
-//	if (bUploadTex)
-//		setUPixels(m_frameCopy.frame->data[1], m_frameCopy.frame->linesize[1]);
-//	glActiveTexture(GL_TEXTURE2);
-//	glBindTexture(GL_TEXTURE_2D, v_tex);
-//	if (bUploadTex)
-//		setVPixels(m_frameCopy.frame->data[2], m_frameCopy.frame->linesize[2]);
-//	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-//	m_program.release();
-//	m_vao.release();
-//}
-
 void QtFfplayer::resizeGL(int width, int height) 
 {
 	update();
 }
 
-//void QtFfplayer::setYPixels(uint8_t* pixels, int stride)
-//{
-//	bindPixelTexture(y_tex, YTexture, pixels, stride);
-//}
-//
-//void QtFfplayer::setUPixels(uint8_t* pixels, int stride)
-//{
-//	bindPixelTexture(u_tex, UTexture, pixels, stride);
-//}
-//
-//void QtFfplayer::setVPixels(uint8_t* pixels, int stride)
-//{
-//	bindPixelTexture(v_tex, VTexture, pixels, stride);
-//}
-
-//void QtFfplayer::initializeTextures()
-//{
-//	if (y_tex) glDeleteTextures(1, &y_tex);
-//	if (u_tex) glDeleteTextures(1, &u_tex);
-//	if (v_tex) glDeleteTextures(1, &v_tex);
-//
-//	glGenTextures(1, &y_tex);
-//	glBindTexture(GL_TEXTURE_2D, y_tex);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-//	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-//	glTexImage2D(GL_TEXTURE_2D, 0, GL_R8, m_frameWidth, m_frameHeight, 0, GL_RED, GL_UNSIGNED_BYTE, NULL);
-//
-//	glGenTextures(1, &u_tex);
-//	glBindTexture(GL_TEXTURE_2D, u_tex);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-//	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-//	glTexImage2D(GL_TEXTURE_2D, 0, GL_R8, m_frameWidth / 2, m_frameHeight / 2, 0, GL_RED, GL_UNSIGNED_BYTE, NULL);
-//
-//	glGenTextures(1, &v_tex);
-//	glBindTexture(GL_TEXTURE_2D, v_tex);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-//	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-//	glTexImage2D(GL_TEXTURE_2D, 0, GL_R8, m_frameWidth / 2, m_frameHeight / 2, 0, GL_RED, GL_UNSIGNED_BYTE, NULL);
-//}
-
-//void QtFfplayer::bindPixelTexture(GLuint texture, QtFfplayer::YUVTextureType textureType, uint8_t* pixels, int stride)
-//{
-//	if (!pixels)
-//		return;
-//
-//	int frameW = m_frameWidth;
-//	int frameH = m_frameHeight;
-//
-//	int const width = textureType == YTexture ? frameW : frameW / 2;
-//	int const height = textureType == YTexture ? frameH : frameH / 2;
-//
-//	glBindTexture(GL_TEXTURE_2D, texture);
-//	glPixelStorei(GL_UNPACK_ROW_LENGTH, stride);
-//	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, GL_RED, GL_UNSIGNED_BYTE, pixels);
-//
-//}
 
 #ifdef	DELAY_ANALYSIS
 void QtFfplayer::calcTotalDelay() 

@@ -127,7 +127,7 @@ public:
     std::unique_ptr<std::function<void()>>m_beginCallBack;
     std::unique_ptr<std::function<void()>>m_endCallBack;
     std::unique_ptr<std::function<int()>>m_getVolumnCallBack;
-    std::unique_ptr<std::remove_pointer<HANDLE>::type,std::function<void(HANDLE&p)>> m_st;
+    std::unique_ptr<std::remove_pointer<HANDLE>::type,std::function<void(HANDLE p)>> m_st;
     std::unique_ptr<std::function<double()>>m_getSpeedCallBack;
     std::atomic_int64_t m_seekTime = AV_NOPTS_VALUE;
     double m_dSavePrevAudioClock;
@@ -135,7 +135,7 @@ public:
     AVPixelFormat m_swpix = AV_PIX_FMT_NONE;
 
     //std::atomic_bool m_bSaveMedia = false;
-    std::string m_strSaveFileName;// = "E:\\saveMedia.ts";
+    //std::string m_strSaveFileName;// = "E:\\saveMedia.ts";
 
     std::mutex m_mutexProtectedRunStart;
     std::condition_variable m_cond;
@@ -515,11 +515,11 @@ public:
         int audio_write_buf_size;
         std::atomic_int audio_volume;
         int muted;
-        struct AudioParams audio_src;
+        /*struct*/ AudioParams audio_src;
 #if CONFIG_AVFILTER
-        struct AudioParams audio_filter_src;
+        /*struct*/ AudioParams audio_filter_src;
 #endif
-        struct AudioParams audio_tgt;
+        /*struct*/ AudioParams audio_tgt;
         struct SwrContext* swr_ctx;
         int frame_drops_early;
         int frame_drops_late;
@@ -571,7 +571,7 @@ public:
 
         SDL_cond* continue_read_thread;
     } VideoState;
-    std::unique_ptr<VideoState, std::function<void(VideoState*&)>> isss;// = nullptr;
+    std::unique_ptr<VideoState, std::function<void(VideoState*)>> isss;// = nullptr;
 
 
     //using ShowMode = VideoState::ShowMode;
@@ -933,7 +933,7 @@ public:
     /* prepare a new audio buffer */
     static void sdl_audio_callback(void* opaque, Uint8* stream, int len);
 
-    int audio_open(void* opaque, int64_t wanted_channel_layout, int wanted_nb_channels, int wanted_sample_rate, struct AudioParams* audio_hw_params);
+    int audio_open(void* opaque, int64_t wanted_channel_layout, int wanted_nb_channels, int wanted_sample_rate, /*struct*/ AudioParams* audio_hw_params);
     /* open a given stream. Return 0 if OK */
     int stream_component_open(VideoState* is, int stream_index);
 

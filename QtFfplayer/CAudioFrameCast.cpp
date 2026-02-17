@@ -42,9 +42,9 @@ bool CAudioFrameCast::translate(AVFrame* f)//, AVCodecContext* decContext, AVCod
 		return true;
 
 	//std::vector<AVFrame*>res;
-	std::unique_ptr<AVFrame, std::function<void(AVFrame*&)>>free_frame(f, [](AVFrame*&f)
+	std::unique_ptr<AVFrame, std::function<void(AVFrame*)>>free_frame(f, [](AVFrame*f)
 		{
-			av_frame_unref(f);
+			//av_frame_unref(f);
 			av_frame_free(&f);
 		});
 
@@ -95,9 +95,9 @@ AVFrame* CAudioFrameCast::getFrame(int samples)
 	if(fifoSize > 0 && fifoSize > samples)
 	{
 		AVFrame* tmp = av_frame_alloc();
-		std::unique_ptr<AVFrame, std::function<void(AVFrame*&)>>free_frame_tmp(tmp, [](AVFrame*& f)
+		std::unique_ptr<AVFrame, std::function<void(AVFrame*)>>free_frame_tmp(tmp, [](AVFrame*f)
 			{
-				av_frame_unref(f);
+				//av_frame_unref(f);
 				av_frame_free(&f);
 			});
 

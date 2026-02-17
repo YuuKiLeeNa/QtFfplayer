@@ -62,7 +62,7 @@ void QProgressSlider::setValue(long long v, bool bConsideMousePress, bool bIsCha
 	m_llCurRealValue = v;
 	if (bIsChangeHandle && ((bConsideMousePress && !m_bMousePressed) || !bConsideMousePress))
 	{
-		long double factor = long double(m_llCurRealValue - m_llMinV) / (m_llMaxV - m_llMinV);
+		long double factor = (long double)(m_llCurRealValue - m_llMinV) / (m_llMaxV - m_llMinV);
 		m_Pos->move(factor* (width() - HANDLE_WIDTH), (height() - HANDLE_HEIGHT) / 2);
 	}
 }

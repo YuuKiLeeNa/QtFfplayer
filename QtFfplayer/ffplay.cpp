@@ -1296,7 +1296,7 @@ int64_t ffplay::get_valid_channel_layout(int64_t channel_layout, int channels)
     m_swpix = AV_PIX_FMT_NONE;
     //m_bSaveMedia = false;
     //m_SaveMedia.reset();
-    m_strSaveFileName.clear();
+    //m_strSaveFileName.clear();
     //callEndFun();
 }
 
@@ -2427,7 +2427,7 @@ end:
     if (!m_st)
     {
         assert(is->audio_tgt.fmt == AV_SAMPLE_FMT_S16);
-        m_st = std::unique_ptr<std::remove_pointer<HANDLE>::type, std::function<void(HANDLE& p)>>(soundtouch_createInstance(), [](HANDLE& pst)
+        m_st = std::unique_ptr<std::remove_pointer<HANDLE>::type, std::function<void(HANDLE p)>>(soundtouch_createInstance(), [](HANDLE pst)
             {
                 soundtouch_destroyInstance(pst);
             });
@@ -2784,7 +2784,7 @@ end:
     }
 }
 
- int ffplay::audio_open(void *opaque, int64_t wanted_channel_layout, int wanted_nb_channels, int wanted_sample_rate, struct AudioParams *audio_hw_params)
+ int ffplay::audio_open(void *opaque, int64_t wanted_channel_layout, int wanted_nb_channels, int wanted_sample_rate, /*struct*/ AudioParams *audio_hw_params)
 {
     SDL_AudioSpec wanted_spec, spec;
     const char *env;
@@ -2897,7 +2897,10 @@ end:
             if(!vHWConfig.empty())
                 for (auto& ele : vHWConfig)
                 {
-                    if (ele->pix_fmt == AV_PIX_FMT_VULKAN || ele->device_type == AV_HWDEVICE_TYPE_VULKAN)//When Seeks video, the program crashes.
+                    if (ele->pix_fmt == AV_PIX_FMT_VULKAN || ele->device_type == AV_HWDEVICE_TYPE_VULKAN ////When Seeks video, the program crashes.
+                        //|| ele->pix_fmt == AV_PIX_FMT_VAAPI || ele->device_type == AV_HWDEVICE_TYPE_VAAPI
+                        //|| ele->pix_fmt == AV_PIX_FMT_VDPAU || ele->device_type == AV_HWDEVICE_TYPE_VDPAU
+                    )
                         continue;
                     m_swpix = ele->pix_fmt;
 

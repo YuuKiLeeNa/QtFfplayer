@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug QtFfplayer",
+            "type": "cppdbg",
+            "request": "launch",
+            // 指定编译后生成的可执行文件的路径
+            "program": "${workspaceFolder}/build/QtFfplayer",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // 在启动调试前执行的编译任务，名字需要和 tasks.json 中的 label 一致
+            "preLaunchTask": "build"
+        }
+
+    ]
+}

@@ -1,6 +1,7 @@
-这个是一个基于ffplay改的一个Qt播放器(支持ubuntu),简洁,结构简单,稳定,正确实现了大多数基本功能(快进,后退,暂停,停止,变速)。自动优先选择硬解码。使用的是qt6.7.3,qt6应该都没问题
+这个是一个基于ffplay改的一个Qt播放器(支持ubuntu,windows),简洁,结构简单,稳定,正确实现了大多数基本功能(快进,后退,暂停,停止,变速)。自动优先选择硬解码。使用的是qt6.7.3,qt6应该都没问题
 This is a Qt-based media player derived from ffplay, featuring a clean, lightweight, and stable architecture that properly implements essential playback functions (fast-forward, rewind, pause, stop, and speed adjustment). It automatically prioritizes hardware decoding when available. Built with Qt 6.7.3 (fully compatible with Qt6).
 ![程序截图](2JXHD8L.png)
+windows编译直接打开.sln
 下面介绍如何在 Ubuntu 系统上编译本播放器项目（基于 Qt6 + FFmpeg + SDL2 + SoundTouch + GLM）.
 编译器：GCC 9+（支持 C++17）
 
@@ -71,6 +72,7 @@ cmake -DQt6_ROOT=~/Qt/6.7.3/gcc_64 ..
 bash
 make -j$(nproc)
 编译完成后，可执行文件 QtFfplayer 将出现在 build 目录中。
+For Windows, simply open the .sln file.
 Compiling the Player Project on Ubuntu (Qt6 + FFmpeg + SDL2 + SoundTouch + GLM)
 This document describes how to compile this player project on Ubuntu.
 

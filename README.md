@@ -1,4 +1,4 @@
-这个是一个基于ffplay改的一个Qt播放器(支持linux,windows),稳定,资源占用极低(拖动进度条不卡顿),能正确的直接渲染大多数常见像素帧,正确实现了大多数基本功能(快进,后退,暂停,停止,变速)，键盘事件，。自动优先选择硬解码。使用的是qt6.7.3,qt6应该都没问题
+这个是一个基于ffplay改的一个Qt播放器(支持linux,windows),稳定,资源占用极低(拖动进度条不卡顿),能正确的直接渲染大多数常见像素帧,正确实现了大多数基本功能(快进,后退,暂停,停止,变速)，键盘事件，拖动文件或目录到播放器。自动优先选择硬解码。使用的是qt6.7.3,qt6应该都没问题
 "This is a Qt player based on ffplay (supports Ubuntu, Linux, Windows). It is stable and has extremely low resource usage (no lag when dragging the progress bar). It can correctly render most common pixel frames directly, and properly implements most basic functions (fast forward, rewind, pause, stop, speed adjustment), as well as keyboard events. It automatically prioritizes hardware decoding. It uses Qt 6.7.3, and should work with Qt6 in general."
 ![程序截图](2JXHD8L.png)
 windows编译直接打开.sln

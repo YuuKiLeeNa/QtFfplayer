@@ -153,8 +153,9 @@ void ffplay::start(int argc, char** argv)
                 do_exit(NULL);
             }
         }
-        decltype(isss)tmpiss(stream_open(input_filename, file_iformat), av_free);
-        isss.swap(tmpiss);
+        //decltype(isss)tmpiss(stream_open(input_filename, file_iformat), av_free);
+        stream_open(input_filename, file_iformat);
+        //isss.swap(tmpiss);
         if (!isss) {
             av_log(NULL, AV_LOG_FATAL, "Failed to initialize VideoState!\n");
             do_exit(NULL);
@@ -3455,6 +3456,9 @@ out:
     is = (VideoState*)av_mallocz(sizeof(VideoState));
     if (!is)
         return NULL;
+
+    isss = decltype(isss)(is, av_free);
+
     is->last_video_stream = is->video_stream = -1;
     is->last_audio_stream = is->audio_stream = -1;
     is->last_subtitle_stream = is->subtitle_stream = -1;
@@ -3501,7 +3505,8 @@ out:
     if (!is->read_tid) {
         av_log(NULL, AV_LOG_FATAL, "SDL_CreateThread(): %s\n", SDL_GetError());
 fail:
-        stream_close(is);
+        //stream_close(is);
+        isss.reset();
         return NULL;
     }
     return is;
